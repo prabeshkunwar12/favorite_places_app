@@ -4,28 +4,34 @@ import 'package:favorite_places_app/widgets/places_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeScreen extends ConsumerStatefulWidget {
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
-  ConsumerState<HomeScreen> createState() {
-    return _HomeScreenState();
-  }
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final places = ref.watch(favoritePlaceProvider);
 
-class _HomeScreenState extends ConsumerState<HomeScreen> {
-  void addPlacesScreen() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (ctx) => const AddNewPlacesScreen(),
+    void addPlacesScreen() {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (ctx) => const AddNewPlacesScreen(),
+        ),
+      );
+    }
+
+    final content = ListView.builder(
+      itemCount: places.length,
+      itemBuilder: (ctx, index) => PlacesCard(place: places[index]),
+    );
+
+    final empty = Center(
+      child: Text(
+        "No places added yet",
+        style: Theme.of(context).textTheme.titleMedium,
       ),
     );
-  }
 
-  @override
-  Widget build(BuildContext context) {
-    final places = ref.watch(favoritePlaceProvider);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -40,10 +46,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               )),
         ],
       ),
-      body: ListView.builder(
-        itemCount: places.length,
-        itemBuilder: (ctx, index) => PlacesCard(place: places[index]),
-      ),
+      body: places.isEmpty ? empty : content,
     );
   }
 }

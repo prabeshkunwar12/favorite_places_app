@@ -29,6 +29,15 @@ final theme = ThemeData().copyWith(
       fontWeight: FontWeight.bold,
       color: colorScheme.onPrimaryContainer,
     ),
+    bodySmall: GoogleFonts.ubuntuCondensed(
+      color: colorScheme.onPrimaryContainer,
+    ),
+    bodyMedium: GoogleFonts.ubuntuCondensed(
+      color: colorScheme.onPrimaryContainer,
+    ),
+    bodyLarge: GoogleFonts.ubuntuCondensed(
+      color: colorScheme.onPrimaryContainer,
+    ),
   ),
 );
 

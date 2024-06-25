@@ -29,13 +29,14 @@ class _AddNewPlacesScreenState extends ConsumerState<AddNewPlacesScreen> {
       appBar: AppBar(
         title: const Text("Add New Place"),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Form(
             key: _formKey,
             child: Column(
               children: [
                 TextFormField(
+                  decoration: const InputDecoration(labelText: "Name"),
                   initialValue: '',
                   maxLength: 50,
                   validator: (value) {
@@ -50,7 +51,8 @@ class _AddNewPlacesScreenState extends ConsumerState<AddNewPlacesScreen> {
                     _name = newValue;
                   },
                   style: TextStyle(
-                      color: Theme.of(context).colorScheme.onPrimaryContainer),
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                  ),
                 ),
                 Row(
                   children: [
