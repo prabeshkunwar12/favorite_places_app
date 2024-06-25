@@ -1,5 +1,6 @@
 import 'package:favorite_places_app/models/place.dart';
 import 'package:favorite_places_app/providers/favorite_places_provider.dart';
+import 'package:favorite_places_app/widgets/input_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -54,7 +55,15 @@ class _AddNewPlacesScreenState extends ConsumerState<AddNewPlacesScreen> {
                     color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),
                 ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const ImageInput(),
+                const SizedBox(
+                  height: 16,
+                ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // TextButton(
                     //   onPressed: _formKey.currentState!.reset,
