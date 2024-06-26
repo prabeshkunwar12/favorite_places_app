@@ -20,9 +20,12 @@ class HomeScreen extends ConsumerWidget {
       );
     }
 
-    final content = ListView.builder(
-      itemCount: places.length,
-      itemBuilder: (ctx, index) => PlacesCard(place: places[index]),
+    final content = Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListView.builder(
+        itemCount: places.length,
+        itemBuilder: (ctx, index) => PlacesCard(place: places[index]),
+      ),
     );
 
     final empty = Center(
