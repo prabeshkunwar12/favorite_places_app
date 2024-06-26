@@ -1,6 +1,6 @@
 import 'package:favorite_places_app/models/place.dart';
 import 'package:favorite_places_app/providers/favorite_places_provider.dart';
-import 'package:favorite_places_app/widgets/input_input.dart';
+import 'package:favorite_places_app/widgets/image_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
