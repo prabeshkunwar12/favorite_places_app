@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Please provide access to your location to save the location of the image.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Please provide access to your library to upload your image.</string>
 	<key>NSCameraUsageDescription</key>
