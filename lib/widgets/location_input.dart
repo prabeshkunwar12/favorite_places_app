@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:favorite_places_app/env.dart';
 import 'package:favorite_places_app/models/place.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
@@ -17,7 +18,6 @@ class LocationInput extends StatefulWidget {
 class _LocationInputState extends State<LocationInput> {
   PlaceLocation? _pickedLocation;
   var _isGettingLocation = false;
-  String googleMapsApiKey = 'AIzaSyCdY4qlNvpag6i2v_Rz0a5slrlM1D0ATTs';
 
   String get locationImage {
     if (_pickedLocation == null) return '';
