@@ -17,18 +17,18 @@ class AddNewPlacesScreen extends ConsumerStatefulWidget {
 class _AddNewPlacesScreenState extends ConsumerState<AddNewPlacesScreen> {
   String? _name;
   File? _selectedImage;
+  PlaceLocation? _pickedLocation;
   final _formKey = GlobalKey<FormState>();
 
   void _savePlace() {
     if (!_formKey.currentState!.validate()) return;
     _formKey.currentState!.save();
-    if (_name == null || _selectedImage == null) {
+    if (_name == null || _selectedImage == null || _pickedLocation == null) {
       return;
     }
     setState(() {
-      ref
-          .read(favoritePlaceProvider.notifier)
-          .addPlaces(Place(name: _name!, image: _selectedImage!));
+      ref.read(favoritePlaceProvider.notifier).addPlaces(Place(
+          name: _name!, image: _selectedImage!, location: _pickedLocation!));
     });
     Navigator.pop(context);
   }
@@ -75,7 +75,11 @@ class _AddNewPlacesScreenState extends ConsumerState<AddNewPlacesScreen> {
                 const SizedBox(
                   height: 16,
                 ),
-                const LocationInput(),
+                LocationInput(
+                  onSetLocation: (location) {
+                    _pickedLocation = location;
+                  },
+                ),
                 const SizedBox(
                   height: 16,
                 ),

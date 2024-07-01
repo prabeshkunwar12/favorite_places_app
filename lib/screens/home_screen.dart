@@ -42,11 +42,12 @@ class HomeScreen extends ConsumerWidget {
         ),
         actions: [
           IconButton(
-              onPressed: addPlacesScreen,
-              icon: Icon(
-                Icons.add,
-                color: Theme.of(context).colorScheme.onPrimaryContainer,
-              )),
+            onPressed: addPlacesScreen,
+            icon: Icon(
+              Icons.add,
+              color: Theme.of(context).colorScheme.onPrimaryContainer,
+            ),
+          ),
         ],
       ),
       body: places.isEmpty ? empty : content,

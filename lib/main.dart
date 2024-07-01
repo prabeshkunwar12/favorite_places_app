@@ -12,6 +12,7 @@ final colorScheme = ColorScheme.fromSeed(
 
 final theme = ThemeData().copyWith(
   scaffoldBackgroundColor: colorScheme.surface,
+  appBarTheme: const AppBarTheme(backgroundColor: Colors.black54),
   colorScheme: colorScheme,
   textTheme: GoogleFonts.ubuntuCondensedTextTheme().copyWith(
     titleSmall: GoogleFonts.ubuntuCondensed(

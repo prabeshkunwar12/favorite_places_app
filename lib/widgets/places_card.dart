@@ -17,7 +17,15 @@ class PlacesCard extends StatelessWidget {
         ),
         title: Text(
           place.name,
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+        ),
+        subtitle: Text(
+          place.location.address,
+          style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
         ),
         onTap: () {
           Navigator.of(context).push(
