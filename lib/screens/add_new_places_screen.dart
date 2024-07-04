@@ -27,8 +27,9 @@ class _AddNewPlacesScreenState extends ConsumerState<AddNewPlacesScreen> {
       return;
     }
     setState(() {
-      ref.read(favoritePlaceProvider.notifier).addPlaces(Place(
-          name: _name!, image: _selectedImage!, location: _pickedLocation!));
+      ref
+          .read(favoritePlaceProvider.notifier)
+          .addPlaces(_name!, _selectedImage!, _pickedLocation!);
     });
     Navigator.pop(context);
   }
